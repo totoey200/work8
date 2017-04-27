@@ -29,7 +29,7 @@ public class GridItem extends LinearLayout {
     public void setData(Fruit one){
         fname.setText(one.getName());
         fprice.setText(Integer.toString(one.getPrice())+"원");
-        fpic.setImageResource(one.getImgno());
+        fpic.setImageResource(Fruit.imgnos[one.getImgno()]);
     }
 
     public void setChecked(boolean check){

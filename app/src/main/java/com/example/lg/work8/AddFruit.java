@@ -73,16 +73,16 @@ public class AddFruit extends LinearLayout implements View.OnClickListener{
                                 price = Integer.parseInt(priceinput.getText().toString());
                             if(b_add.getText().toString().equals("M")){
                                 if(at.getText().toString().equals("")){
-                                    onAddListener.onAdd("이름 없음",Fruit.imgnos[fruitno],price,editno);
+                                    onAddListener.onAdd("이름 없음",fruitno,price,editno);
                                 }
                                 else
-                                    onAddListener.onAdd(at.getText().toString(),Fruit.imgnos[fruitno],price,editno);
+                                    onAddListener.onAdd(at.getText().toString(),fruitno,price,editno);
                             }
                             else {
                                 if (at.getText().toString().equals("")) {
-                                    onAddListener.onAdd("이름 없음", Fruit.imgnos[fruitno], price);
+                                    onAddListener.onAdd("이름 없음", fruitno, price);
                                 } else
-                                    onAddListener.onAdd(at.getText().toString(), Fruit.imgnos[fruitno], price);
+                                    onAddListener.onAdd(at.getText().toString(), fruitno, price);
                             }
                             at.setText("");
                             b_add.setText("ADD");
@@ -99,10 +99,10 @@ public class AddFruit extends LinearLayout implements View.OnClickListener{
         }
     }
     public void setEdit(String string,int imgno,int price,int position){
-        Log.d("Tag",string);
         editno = position;
         at.setText(string);
-        img.setImageResource(imgno);
+        fruitno = imgno;
+        img.setImageResource(Fruit.imgnos[fruitno]);
         priceinput.setText(Integer.toString(price));
         b_add.setText("M");
     }
