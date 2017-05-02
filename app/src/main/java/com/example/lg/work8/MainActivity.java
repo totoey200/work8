@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         init();
     }
     void init(){
+        setTitle("What is your favorite fruit?");
         data = new ArrayList<>();
         cb = (CheckBox)findViewById(R.id.checkbox);
         gridView = (GridView)findViewById(R.id.gridview);
